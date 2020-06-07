@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue Basics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <h1>Vue Basics</h1>
+  <div id="app">
+    <h2>{{ title }}</h2>
+    <p>{{ greet('morning') }}</p>
+    <a :href="url">Youtube</a>
+    <div :class="classes">Classes from Instances</div>
+    <p>Name:</p>
+    <input type="text" :value="name">
+    <p>I earn {{ wage }}$ per hour</p>
+    <button v-on:click.alt="wage++">Increase wage by 1$</button>
+    <button v-on:click="wage--">Decrease wage by 1$</button><br><br>
+    <button v-on:dblclick="changeWage(10)">Increase wage by 10$</button>
+    <button v-on:dblclick="changeWage(-10)">Decrease wage by 10$</button><br><br>
+    <button @click="logClickEvent">Log Event Info</button>
+    <div class="canvas" @mousemove="logCoordinate">
+      {{ coords.x }}, {{ coords.y }}
+    </div>
+    <!-- <input type="text" @keyup="logKeyUpEvent" value="name"> -->
+    <input type="text" v-model="name"><br>
+    <p v-if="showRicardo">Ricardo Milos</p>
+    <button @click="toggleName">Show Ricardo: {{ showRicardo }}</button>
+    <p>Monsters in Maple</p>
+    <ul>
+      <li v-for="mob in monsters">{{ mob }}</li>
+    </ul>
+    <di>
+      <table :class="table_class">
+        <tr>
+          <th>Trooper</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Rank</th>
+        </tr>
+        <tr v-for="(deploy, index) in troopers">
+          <span>{{ doMath(index) }}</span>
+          <td> {{ index }} </td>
+          <td>{{ deploy.name }}</td>
+          <td>{{ deploy.age }}</td>
+          <td>{{ deploy.rank }} </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

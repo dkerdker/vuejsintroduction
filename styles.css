@@ -1,0 +1,22 @@
+.canvas {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    background: #ddd;
+}
+
+.one {
+    color: darkgreen;
+}
+
+.two {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.three, th, td {
+    text-align: left;  
+    border: 0.5px solid black;
+    border-collapse: collapse;
+    padding: 5px 10px;
+}
